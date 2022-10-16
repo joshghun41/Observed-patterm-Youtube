@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Observer Pattern" Height="900" Width="800">
+    <Grid Margin="0,0,0,-6">
+        <Button Name="youtubebutton" Content="Youtuber" HorizontalAlignment="Left" Margin="178,21,0,0" VerticalAlignment="Top" Width="143" Height="81" Foreground="Black" BorderBrush="#FFFDFDFD" Background="#FFE66D6D" Click="Button_Click"/>
+        <Button Name="subcriberbutton" Content="Subscriber" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="143" Height="81" Background="#FFE0D55D" Click="subcriberbutton_Click"/>
+        <Button Name="addpostbutton" Content="Add New Post" HorizontalAlignment="Left" Margin="597,21,0,0" VerticalAlignment="Top" Width="178" Height="59" Foreground="Black" BorderBrush="#FFFDFDFD" Click="addpostbutton_Click" >
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF60D81E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="showallbutton" Content="Show All Subcriber" HorizontalAlignment="Left" Margin="441,21,0,0" VerticalAlignment="Top" Width="151" Height="59" Foreground="Black" BorderBrush="#FFFDFDFD" Click="showallbutton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF87F39D" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Name="signbutton" Content="Sign In" HorizontalAlignment="Left" Margin="10,124,0,0" VerticalAlignment="Top" Height="63" Width="91" Click="signbutton_Click"/>
+        <Button Name="registerbutton" Content="Register" HorizontalAlignment="Left" Margin="137,124,0,0" VerticalAlignment="Top" Width="84" Height="63"/>
+        <Button Name="enterbutton" Content="Enter" HorizontalAlignment="Left" Margin="483,124,0,0" VerticalAlignment="Top" Height="69" Width="67" Click="enterbutton_Click"/>
+        <TextBox Name="namebox" HorizontalAlignment="Center" Margin="0,124,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="32"/>
+        <TextBox Name="passwordbox" HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="32"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="265,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.116"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.116"/>
+
+
+    </Grid>
+</Window>

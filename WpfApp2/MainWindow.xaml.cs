@@ -15,34 +15,74 @@ using System.Windows.Shapes;
 
 namespace WpfApp2
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+   
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
-            User user = new User();
-            user.Name = "cosqun";
-            user.Password = "cosqun123";
-
         }
-        class User
+        public interface ISubscriber
         {
-            public string Name { get; set; }
-            public string Password { get; set; }
-            public string SubName { get; set; }
-
-           
+          
         }
-        List<User> users { get; set; }
 
-        class Youtuber
+ public class Post
+    {
+        public string ImagePath { get; set; }
+        public string TextInfo { get; set; }
+
+    }
+
+ public class Youtuber
+    {
+        public bool IsFirstTime { get; set; }
+        public List<Post> Posts { get; set; }
+
+        public List<ISubscriber> Subscribers { get; set; }
+
+        public Youtuber()
         {
-            public string Name { get; set; }
-            List<User> users { get; set; }
+            Subscribers = new List<ISubscriber>();
         }
+
+        public void NotifyAllUsers(Post post)
+        {
+            foreach (var subscriber in Subscribers)
+            {
+                if (subscriber is YoutubeSubscriber sB)
+                {
+                    sB.Posts.Add(post);
+                }
+            }
+        }
+    }
+
+ public class YoutubeSubscriber : ISubscriber
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+        public List<Post> Posts { get; set; }
+
+        public YoutubeSubscriber()
+        {
+            Posts = new List<Post>();
+        }
+        public void Notify()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

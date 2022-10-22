@@ -18,9 +18,20 @@ namespace WpfApp2
    
     public partial class MainWindow : Window
     {
+        public Repo repo { get; set; }
+
         public MainWindow()
         {
             InitializeComponent();
+          
+             repo = new Repo();
+            repo.AddUser(new YoutubeSubscriber
+            {
+                Username ="cosqun",
+                Password ="1"
+            });
+           
+            
         }
         public interface ISubscriber
         {
@@ -36,7 +47,7 @@ namespace WpfApp2
 
  public class Youtuber
     {
-        public bool IsFirstTime { get; set; }
+        
         public List<Post> Posts { get; set; }
 
         public List<ISubscriber> Subscribers { get; set; }
@@ -68,10 +79,7 @@ namespace WpfApp2
         {
             Posts = new List<Post>();
         }
-        public void Notify()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 
 
@@ -133,10 +141,14 @@ namespace WpfApp2
 
         private void enterbutton_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var item in users)
+            var user=repo.GetUserByUsername(namebox.Text);
+            if(user != null)
             {
-
+                
             }
+
+            
+            
         }
     }
 }

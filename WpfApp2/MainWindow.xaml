@@ -32,6 +32,10 @@
         <TextBox Name="passwordbox" HorizontalAlignment="Center" Margin="0,161,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Height="32"/>
         <Label Content="Name" HorizontalAlignment="Left" Margin="265,130,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.116"/>
         <Label Content="Password" HorizontalAlignment="Left" Margin="265,167,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.116"/>
+        <ListBox Name="notlistbox"  Height="100" Margin="24,220,635,570">
+            <Label/>
+        </ListBox>
+        <Label Content="Notification" HorizontalAlignment="Left" Margin="24,192,0,0" VerticalAlignment="Top"/>
 
 
     </Grid>
